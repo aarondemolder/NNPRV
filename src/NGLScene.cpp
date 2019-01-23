@@ -15,8 +15,8 @@ NGLScene::NGLScene( QWidget *_parent ) : QOpenGLWidget( _parent )
 	m_wireframe=false;
     m_backfaceCulling=false;
     m_mapScale=8.0;
-    m_heightMapPath = "../node_noise/previews/preview_height.pre";
-    m_diffusePath = "../node_noise/previews/preview_diffuse.pre";
+    m_heightMapPath = "../nodenoise/previews/preview_height.pre";
+    m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
 
 }
 
@@ -26,7 +26,7 @@ void NGLScene::objExporter(QString _fileName)
     //little cheat so I don't have to rearrange gridPoint counter
     //Uses the colour channels to generate the vertex points for the obj writer
     //But requires we input the actual heightmap values into gridPoints where colour values would normally live
-    m_diffusePath = "../node_noise/previews/preview_height.pre";
+    m_diffusePath = "../nodenoise/previews/preview_height.pre";
     reGenGridPoints();
 
     std::string utf8_text = _fileName.toUtf8().constData();
@@ -62,7 +62,7 @@ void NGLScene::objExporter(QString _fileName)
     std::cout<<"Terrain OBJ Saved\n";
 
     //end of cheat
-    m_diffusePath = "../node_noise/previews/preview_diffuse.pre";
+    m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
     reGenGridPoints();
 }
 
@@ -70,7 +70,7 @@ void NGLScene::artExporter(QString _fileName)
 {
 
     //little cheat so I don't have to rearrange gridPoint counter
-    m_diffusePath = "../node_noise/previews/preview_height.pre";
+    m_diffusePath = "../nodenoise/previews/preview_height.pre";
     reGenGridPoints();
 
     std::string utf8_text = _fileName.toUtf8().constData();
@@ -95,7 +95,7 @@ void NGLScene::artExporter(QString _fileName)
     std::cout<<"Art File Saved\n";
 
     //end of cheat
-    m_diffusePath = "../node_noise/previews/preview_diffuse.pre";
+    m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
     reGenGridPoints();
 }
 
@@ -435,8 +435,8 @@ void NGLScene::loadDiffuse()
 
 void NGLScene::reloadMaps()
 {
-    m_heightMapPath = "../node_noise/previews/preview_height.pre";
-    m_diffusePath = "../node_noise/previews/preview_diffuse.pre";
+    m_heightMapPath = "../nodenoise/previews/preview_height.pre";
+    m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
 
     reGenGridPoints();
 
