@@ -7,6 +7,7 @@ A 3D terrain previewing application for [nodenoise](https://github.com/aarondemo
 * Preview terrains generated in nodenoise with both heightmap and diffuse support
 * Adjust the height scale of terrains
 * Export the previewer result as an OBJ
+* Uses the NCCA Coding Standard!
 
 ![Image of Nodenoise Previewer](https://i.imgur.com/dqLtgmG.png)
 
