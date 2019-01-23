@@ -1,6 +1,6 @@
 # NNPRV
 
-A 3D terrain previewing application for [nodenoise](https://github.com/aarondemolder/nodenoise), using the [NCCA Graphics Library (NGL)](https://github.com/NCCA/NGL).
+A 3D terrain previewing application for [nodenoise](https://github.com/aarondemolder/nodenoise), using Qt and the [NCCA Graphics Library (NGL)](https://github.com/NCCA/NGL).
 
 ### Features
 
