@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent), m_ui(new Ui::MainW
   connect(m_ui->m_loadHeightMap,SIGNAL(clicked()),m_gl,SLOT(loadHeightMap()));
   connect(m_ui->m_loadDiffuse,SIGNAL(clicked()),m_gl,SLOT(loadDiffuse()));
 
-  //obj exporter bad idea for the way the heightmap points are generated, this would have to be rewritten ideally - so removed it.
+  //obj exporter & 'art' exporter, couldn't resist making that a feature (not a bug!)
   connect(m_ui->m_objExport,SIGNAL(clicked()),m_gl,SLOT(triggerExport()));
   connect(m_ui->m_artExport,SIGNAL(clicked()),m_gl,SLOT(triggerArtExport()));
 

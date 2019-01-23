@@ -11,8 +11,8 @@
 #include <QOpenGLWidget>
 #include <memory>
 
+//scroll wheel zoom speed
 constexpr float ZOOM = 2.0f;
-constexpr float INCREMENT = 0.01f;
 
 class NGLScene : public QOpenGLWidget
 {
@@ -24,6 +24,7 @@ public :
   ~NGLScene() override;
 
 public slots:
+
     void setXRotation(int angle);
     void setYRotation(int angle);
     void setZRotation(int angle);
@@ -37,6 +38,7 @@ public slots:
     void triggerArtExport();
 
 protected:
+
     void initializeGL() override;
     void paintGL() override;
     void resizeGL(int width, int height) override;
