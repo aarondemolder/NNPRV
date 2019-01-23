@@ -17,6 +17,7 @@ NGLScene::NGLScene( QWidget *_parent ) : QOpenGLWidget( _parent )
   //default values
   m_wireframe=false;
   m_backfaceCulling=false;
+  gridSize = 100;
   m_mapScale=8.0;
   m_heightMapPath = "../nodenoise/previews/preview_height.pre";
   m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
@@ -304,9 +305,9 @@ void NGLScene::initializeGL()
 }
 
 
-void NGLScene::resizeGL(int w, int h)
+void NGLScene::resizeGL(int _w, int _h)
 {
-  m_proj=ngl::perspective( 45.0f, static_cast<float>( w ) / h, 0.05f, 350.0f );
+  m_proj=ngl::perspective( 45.0f, static_cast<float>( _w ) / _h, 0.05f, 350.0f );
 }
 
 
