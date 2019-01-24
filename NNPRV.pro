@@ -1,4 +1,4 @@
-TARGET=nodenoisepreview
+TARGET=nnprv
 
 OBJECTS_DIR=obj
 
