@@ -21,6 +21,9 @@ NGLScene::NGLScene( QWidget *_parent ) : QOpenGLWidget( _parent )
   m_mapScale=8.0;
   m_heightMapPath = "../nodenoise/previews/preview_height.pre";
   m_diffusePath = "../nodenoise/previews/preview_diffuse.pre";
+  m_xRot = 0;
+  m_yRot = 0;
+  m_zRot = 0;
 
 }
 
@@ -184,7 +187,6 @@ void NGLScene::reGenGridPoints()
 
 void NGLScene::genGridPoints()
 {
-
   //initial terrain generation, basically unchanged from demo besides additional image loading for seperate heightmap & diffuse images
   //load preview images at startup - does of course require they exist
   QImage imageTerrain(m_heightMapPath);
@@ -276,7 +278,7 @@ void NGLScene::initializeGL()
   ngl::Vec3 to(0,0,0);
   ngl::Vec3 up(0,1,0);
 
-  m_world=ngl::lookAt(from,to,up);
+  m_view=ngl::lookAt(from,to,up);
   m_proj=ngl::perspective(45,720.0f/576.0f,0.001f,150);
 
   //grab an instance of shader manager
@@ -340,7 +342,7 @@ void NGLScene::paintGL()
   ngl::Mat4 rotY;
 
   //create the rotation matrices
-  rotX.rotateX(180.0f - (m_xRot / 16.0f));
+  rotX.rotateX(30.0f - (m_xRot / 16.0f));
   rotY.rotateY(m_yRot / 16.0f);
 
   //multiply the rotations
@@ -351,7 +353,7 @@ void NGLScene::paintGL()
   m_mouseGlobalTX.m_m[3][1] = m_modelPos.m_y;
   m_mouseGlobalTX.m_m[3][2] = m_modelPos.m_z;
 
-  MVP=m_proj*m_world*m_mouseGlobalTX;
+  MVP=m_proj*m_view*m_mouseGlobalTX;
 
   ngl::ShaderLib *shader=ngl::ShaderLib::instance();
   (*shader)["ColourShader"]->use();
