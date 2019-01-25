@@ -5,7 +5,6 @@
 #include <ngl/Vec3.h>
 #include <ngl/Mat4.h>
 #include <ngl/Text.h>
-#include "WindowParams.h"
 #include <QEvent>
 #include <QResizeEvent>
 #include <QOpenGLWidget>
@@ -20,7 +19,7 @@ public :
   /// @brief Constructor for GLWindow
   /// @param [in] _parent the parent window to create the GL context in
   //----------------------------------------------------------------------------------------------------------------------
-  NGLScene(QWidget *_parent );
+  NGLScene(QWidget *_parent);
 
   /// @brief dtor
   ~NGLScene() override;
